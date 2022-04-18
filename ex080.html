@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Maiorr</title>
+</head>
+<body>
+    <header>
+        <h1>Descubra qual é o número maior</h1>
+    </header>
+    <section>
+        <div>
+            Digite um número <input type="number" id="num" onfocus="value='';"><br>
+            <input type="button" value="Adicionar" onclick="add()">
+            <input type="button" value="Concluir" onclick="concluir()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        let num = []
+        let c = 0
+        let maior = 0
+        function add(){
+            c++
+            num[c] = parseFloat(document.getElementById('num').value)
+            if (num[c] > maior){
+                maior = num[c]
+            }
+        }
+        function concluir(){
+            res.innerHTML = 'O maior número foi: ' + maior
+            
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParOuImpar</title>
+</head>
+<body>
+    <header>
+        <h1>Par ou Impar</h1>
+    </header>
+    <section>
+        <div>
+
+            Digite um número <input type="number" id="num" onfocus="value='';"><br>
+            <input type="button" value="Adicionar" onclick="add()">
+            <input type="button" value="Mostrar números" onclick="concluir()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        let num = []
+        let c = 0
+        let pop = 0
+        
+        function add(){
+            
+            c++
+            num[c] = parseFloat(document.getElementById('num').value)
+            res.innerHTML = 'Número ' + num[c] + ' adicionado'
+            
+        }
+
+        function concluir(){
+            
+            res.innerHTML = ''
+            for(let c = 1; c < num.length; c++){
+                   
+                if(num[c] % 2 < 1){
+                    res.innerHTML += 'O número ' + num[c] + ' é um número PAR<br>'
+                } else {
+                    res.innerHTML += 'O número ' + num[c] + ' é um número IMPAR<br>'
+                }   
+            } 
+            c = 0
+            num = []       
+        }   
+
+    </script>
+    
+</body>
+</html>

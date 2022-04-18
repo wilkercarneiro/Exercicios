@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menor Nota</title>
+</head>
+<body>
+    <header>
+        <h1>Menor Nota</h1>
+    </header>
+    <section>
+        <div>
+            Clique em inserir parar enviar os dados
+            <input type="button" value="Inserir" onclick="contar()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function contar(){
+            let age = []
+            let name = []
+            let age2 = 0
+            let name2 = 0
+            let resp = 's'
+            let c = -1
+            let i = 0
+            let menor = ''
+            
+            while (resp == 'S' || resp == 's'){
+                c++
+                i++
+                name2 = prompt('Digite o ' + i + '° nome')
+                age2 = parseFloat(prompt('Digite a idade de ' + name2))
+                name[c] = name2
+                age[c] = age2
+                resp = prompt('QUER CONTINUAR? [S/N]')
+                if (age2 < 18){
+                    menor += name2 + ' - ' + age2 + ' anos<br>'
+                }
+
+                
+            }
+            res.innerHTML = 'As pessoas menores de idade são: <br>' + menor
+        }
+
+    </script>
+    
+</body>
+</html>

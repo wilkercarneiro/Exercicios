@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+    <header>
+        <h1>Contador Inteligente</h1>
+    </header>
+    <section>
+        <div>
+            INICIO DA CONTAGEM <input type="number" id="ini" onfocus="value='';"><br>
+            PASSO DA CONTAGEM <input type="number" id="passo" onfocus="value='';"><br>
+            FIM DA CONTAGEM <input type="number" id="fim" onfocus="value='';"><br>
+            <input type="button" value="Adicionar" onclick="adicionar()">
+            <input type="button" value="Mostrar Contagens" onclick="concluir()">
+            
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        let ini = []
+        let passo = []
+        let fim = []
+        let c = 0
+        let contagem = 0
+        function adicionar(){
+            c++
+            ini[c] = parseFloat(document.getElementById('ini').value)
+            passo[c] = parseFloat(document.getElementById('passo').value)
+            fim[c] = parseFloat(document.getElementById('fim').value)
+            res.innerHTML = 'Contagem ' + c + ' adicionada com sucesso!'
+
+        }
+        function concluir(){
+            res.innerHTML = ''
+
+            for (let c = 1; c <= ini.length; c++){
+                if (ini[c] <= fim[c]){                  
+                  ini[c] = ini[c] + passo[c]
+                  res.innerHTML += ini[c]  
+
+                }
+
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>

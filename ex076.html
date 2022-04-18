@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulheres +5k</title>
+</head>
+<body>
+    <header>
+        <h1>Mulheres +5k</h1>
+    </header>
+    <section>
+        <div>
+            Nome: <input type="text" id="name" onfocus="value='';" ><br>
+            Sexo: <input type="text" id="sex" onfocus="value='';" ><br>
+            Salario: <input type="number" id="sal" onfocus="value='';" ><br>
+            <input type="button" value="Adicionar" onclick="add()" >
+            <input type="button" value="Concluir" onclick="concluir()">
+
+
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        let name = []
+        let sex = []
+        let sal = []
+        let c = 0
+        let resp = ''
+
+        function add(){
+            res.innerHTML = ''
+            c++  
+            name[c] = document.getElementById('name').value
+            sex[c] = document.getElementById('sex').value
+            sal[c] = parseFloat(document.getElementById('sal').value)
+            
+            /*if (sex[c] == 'Feminino' || sex[c] == 'feminino' || sex[c] == 'Mulher' || sex[c] == 'mulher' && sal[c] > 5000){
+                
+                resp += '<br>Nome: ' + name[c] + '<br>Sexo: ' + sex[c] + '<br>Salario: ' + sal[c] + '<br>'                
+                
+            } */
+             
+        }
+        
+
+        function concluir(){
+            res.innerHTML += '<strong><p>Mulheres com Salario acima de R$5.000,00</p></strong>'
+            for (let c = 0; c < name.length; c++){
+                if (sex[c] == 'Feminino' || sex[c] == 'feminino' || sex[c] == 'Mulher' || sex[c] == 'mulher' && sal[c] > 5000){
+
+                    res.innerHTML += '---------------------------------------<br>'
+                    res.innerHTML += 'Name: ' + name[c] + '<br>'
+                    res.innerHTML += 'Sexo: ' + sex[c] + '<br>'
+                    res.innerHTML += 'Salario: ' + sal[c] + '<br>'
+                    
+                    /*res.innerHTML = ''
+                    res.innerHTML += '<p>Essas são as Mulheres que ganham acima de R$5.000,00</p><br>'               
+                    res.innerHTML += resp*/                
+                    
+                }
+            }
+ 
+            
+        }
+        
+        
+
+    </script>
+    
+</body>
+</html>

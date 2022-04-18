@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somador</title>
+</head>
+<body>
+    <header>
+        <h1>Somador</h1>
+    </header>
+    <section>
+        <div>
+            Digite um número: <input type="number" id="num" onfocus="value='';" ><br>
+            <input type="button" value="Adicionar" onclick="add()">
+            <input type="button" value="Concluir" onclick="concluir()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>  
+    <script>
+        let num = []   
+        let soma = 0
+        let c = 0
+        function add(){       
+            c++
+            num[c] = parseFloat(document.getElementById('num').value)
+            soma = soma + num[c]           
+        }
+
+        function concluir(){
+
+            res.innerHTML = soma
+        }
+
+    </script>
+    
+</body>
+</html>
