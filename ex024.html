@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação Númerica</title>
+</head>
+<body>
+    <header>
+        <h1>COMPARAÇÃO NÚMERICA 2.0</h1>
+    </header>
+    <section>
+        <div>
+            Digite o primeiro número: <input type="number" name="n1" id="n1">
+            <br>Digite o segundo número: <input type="number" name="n2" id="n2">
+            <br><input type="button" value="Comparar" onclick="comparar()">
+
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+
+        function comparar(){
+            let n1 = document.getElementById('n1')
+            n1 = Number(n1.value)
+            let n2 = document.getElementById('n2')
+            n2 = Number(n2.value)
+
+            if (n1 > n2){
+                res.innerHTML = 'O número ' + n1 + ' é o maior.'
+            } else if (n2 > n1){
+                res. innerHTML = 'O número ' + n2 + ' é o maior.'
+            } else {
+                res.innerHTML = 'Os dois números são iguais'
+            }
+        }   
+
+    </script>
+</body>
+</html>

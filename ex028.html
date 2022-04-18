@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joken-PO</title>
+</head>
+<body>
+    <header>
+        <h1>Joken-PO</h1>
+    </header>
+    <section>
+        <div>
+            Pedra, papel e teeeesoura...<br>
+            JOGADOR 1: <input type="text" name="j1" id="j1"><br>
+            JOGADOR 2: <input type="text" name="j2" id="j2"><br>
+            <input type="button" value="Resultado" onclick="resultado()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function resultado(){
+            let j1 = document.getElementById('j1').value
+            let j2 = document.getElementById('j2').value
+
+            if (j1 == 'pedra' && j2 == 'tesoura' || j1 == 'papel' && j2 == 'pedra' || j1 == 'tesoura' && j2 == 'papel'){
+                res.innerHTML = 'O jogador 1 venceu ' + j1 + ' vence ' + j2 
+
+            } else {
+                res.innerHTML = 'O jogador 2 venceu ' + j2 + ' vence ' + j1
+            }
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

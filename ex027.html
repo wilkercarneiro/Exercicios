@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste de Salario</title>
+</head>
+<body>
+    <header>
+        <h1>Reajuste Salarial</h1>
+    </header>
+    <section>
+        <div>
+            Qual o nome do funcionario? <input type="text" name="name" id="name">
+            <br>Há quantos anos ele trabalhar na empresa? <input type="number" name="ano" id="ano">
+            <br>Qual o salario do funcionario? <input type="number" name="sal" id="sal">
+            <br><input type="button" value="Calcular" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+       
+       function calcular(){
+            let name = document.getElementById('name').value
+            let ano = document.getElementById('ano')
+            let sal = document.getElementById('sal')
+            ano = Number(ano.value)
+            sal = Number(sal.value)
+
+            if (ano < 3) {
+                let reaj = ((3 / 100) * sal) + sal
+                res.innerHTML = name + ' teve um reajuste de 3% em seu salario.<br> SALARIO ATUAL: ' + reaj
+            } else if (ano < 10) {
+                let reaj = ((12 / 100) * sal) + sal
+                res.innerHTML = name + ' teve um reajuste de 12% em seu salario.<br> SALARIO ATUAL: ' + reaj    
+            } else {
+                let reaj = ((20 / 100) * sal) + sal
+                res.innerHTML = name + ' teve um reajuste de 20% em seu salario.<br> SALARIO ATUAL: ' + reaj
+            }
+        }
+
+    </script>    
+</body>
+</html>
