@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem decrescente</title>
+</head>
+<body>
+    <headeR>
+        <h1>Ordem Decrescente</h1>
+    </headeR>
+    <section>
+        <div>
+            Quantas números você quer? <input type="number" id="num"><br>
+            Qual é o passo? <input type="number" id="pass"><br>
+            <input type="button" value="Contar" onclick="calcular()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let num = parseFloat(document.getElementById('num').value)
+            let passo = parseFloat(document.getElementById('pass').value)
+            let array = []
+            res.innerHTML = ''
+            for (let i = num; i > 0; i = i - passo){
+                
+                array.push(i)
+            }
+            res.innerHTML += array
+
+        }
+
+    </script>    
+</body>
+</html>

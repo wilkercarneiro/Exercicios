@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Peso e Altura</title>
+</head>
+<body>
+    <header>
+        <h1>Calculadora Peso e Altura</h1>
+    </header>
+    <section>
+        <div>
+            Quantas pessoas quer ler? <input type="number" id="num">
+            <input type="button" value="Calcular" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let num = parseFloat(document.getElementById('num').value)
+            let media = 0
+            let peso = 0
+            let altura = 0
+            let soma = 0
+            let p90 = 0
+            let p50_a160 = 0
+            let p100_a190 = 0
+            for (let i = 1 ; i <= num ; i++){
+                peso = prompt('[' + i + ' PESSOA] - Digite o Peso')
+                altura = prompt('[' + i + ' PESSOA] - Digite a Altura')
+                soma = soma + parseFloat(altura)
+                res.innerHTML = ''
+
+                if (peso > 90){
+                    p90++
+                }
+                if (peso < 50 && altura < 1.60){
+                    p50_a160++
+                }
+                if (peso > 100 && altura > 1.90){
+                    p100_a190++
+                }
+            }
+            media = soma / num
+            res.innerHTML += 'A média de altura do Grupo é de: ' + media
+            res.innerHTML += '<br>Pessoas com mais de 90 kg: ' + p90
+            res.innerHTML += '<br>Pessoas com menos de 50kg e menos de 1.60 de altura: ' + p50_a160
+            res.innerHTML += '<br>Pessoas com mais de 100kg e mais de 1.90 de altura: ' + p100_a190
+
+        }
+
+    </script>
+    
+</body>
+</html>

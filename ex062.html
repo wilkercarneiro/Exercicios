@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preenchendo Posições - VETOR</title>
+</head>
+<body>
+    <header>
+        <h1>Preenchendo Posições - VETOR</h1>
+    </header>
+    <section>
+        <div>
+            Diga quantas posições o vetor irá ter <input type="number" id="pos"> 
+            <input type="button" value="Iniciar" onclick="calcular()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let pos = parseFloat(document.getElementById('pos').value)
+            let num = []
+            let obj = 0
+            for (let i = 1; i <= pos; i++){
+            obj = prompt('Digite o ' + i + ' número')
+            num.push(obj)
+            }         
+
+            res.innerHTML = num
+
+
+        }
+    </script>
+    
+</body>
+</html>

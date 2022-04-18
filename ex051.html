@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposta Aleatoria</title>
+</head>
+<body>
+    <header>
+        <h1>Serviço de Aposta</h1>
+    </header>
+    <section>
+        <div>
+            Você tem 4 chances para acertar um número de 1 á 10<br> 
+            
+            <input type="button" value="Iniciar" onclick="iniciar()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function iniciar(){
+            let s = Math.floor((Math.random()* 10) + 1)
+            let r = 0
+
+            res.innerHTML = ''           
+            for (let i = 1;i <= 4;i++){
+                r = prompt('[CHUTAR] - Tentativa ' + i + '/4')
+                if (r == s){
+                    alert('Parabéns, você acertou')
+                    break
+                } else {
+                    alert('Você errou, tente novamente')
+                }
+                
+            }
+            if (r != s){
+                res.innerHTML += 'É uma pena, você gastou todas as suas chances. Tente novamente'
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <header>
+        <h1>Fibonacci</h1>
+    </header>
+    <section>
+        <div>
+            Quer a sequencia quantas vezes? <input type="number" id="num">
+            <input type="button" value="Iniciar Sequencia" onclick="calcular()"> 
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let num = parseFloat(document.getElementById('num').value)
+            let fibo = []
+            res.innerHTML = ''
+            fibo[0] = 0
+            fibo[1] = 1
+            for (let i = 2; i <= num; i++){
+                fibo[i] = fibo[i - 2] + fibo[i - 1]
+            }
+
+                res.innerHTML +=  fibo
+
+            
+        }
+
+    </script>
+    
+</body>
+</html>

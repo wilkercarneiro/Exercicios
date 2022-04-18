@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+</head>
+<body>
+    <header>
+        <h1>Contagem</h1>
+    </header>
+    <section>
+        <div>
+            Inicio: <input type="number" id="ini"><br>
+            Fim: <input type="number" id="fim"><br>
+            Passo: <input type="number" id="passo"><br>
+            <input type="button" value="Contar Agora" onclick="contar()">
+
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function contar(){
+
+            for (let i = 0; i <= 30; i = i + 3){
+                res.innerHTML += i + ', '
+            }
+            
+            /*let ini = parseFloat(document.getElementById('ini').value)
+            let fim = parseFloat(document.getElementById('fim').value)
+            let passo = parseFloat(document.getElementById('passo').value)
+
+            if (ini > fim){
+
+                while (fim < ini){
+                    ini = ini - passo
+                    res.innerHTML += ini + ', '
+                }
+            
+            }else {
+
+                while (fim > ini){
+                    ini = ini + passo
+                    res.innerHTML += ini + ', '
+                }
+
+            }*/
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

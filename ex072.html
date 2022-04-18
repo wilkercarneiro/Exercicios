@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Idade</title>
+</head>
+<body>
+    <header>
+        <h1>Leitor de Idade</h1>
+    </header>
+    <section>
+        <div>
+            Quantas idades quer ler? <input type="number" id="num">
+            <input type="button" value="Iniciar" onclick="calcular()">
+
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let num = parseFloat(document.getElementById('num').value)
+            let array = []
+            let c = -1
+            let resp = 0
+            let media = 0
+            let soma = 0
+            let mais_25 = ''
+            let maior = 0
+            let pos_maior = 0
+            
+            res.innerHTML = ''
+            for (let i = 1; i <= num;i++){
+                c++
+                resp = parseFloat(prompt('Digite o ' + i + '° número'))
+                soma = resp + soma
+                media =  soma / num
+                if (resp > 25){
+                    mais_25 += i + ', '
+                }
+                if (resp > maior){
+                    maior = resp
+                    pos_maior = i
+                }
+                array[c] = resp   
+                            
+            }
+            
+            res.innerHTML += 'A média das idades é: ' + media + '<br>'
+            res.innerHTML += 'Posição de pesssoas com mais de 25 anos: ' + mais_25 + ' <br>'
+            res.innerHTML += 'A maior idade digitada foi: ' + maior + '<br>'
+            res.innerHTML += 'A maior idade digitada ficou na posição: ' + pos_maior + '<br>'
+            res.innerHTML += array
+        }
+
+    </script>
+
+    
+</body>
+</html>

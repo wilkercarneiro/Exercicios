@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario de Funcionarios</title>
+</head>
+<body>
+    <header>
+        <h1>Salario de Funcionarios</h1>
+    </header>
+    <section>
+        <div>
+            Calculadora de Salario <input type="button" value="Iniciar" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+
+    <script>
+        function calcular(){
+            let sex = ''
+            let sal = 0
+            let resp = ''
+            let sal_femi = 0
+            let sal_masc = 0
+
+            sal = prompt('Qual é o salario?')
+            sex = prompt('Qual o sexo?')
+            resp = prompt('Quer continuar?')
+
+            res.innerHTML = ''
+
+
+            while (resp == 'Sim' || resp == 'sim' || resp == 's' || resp == 'S' || resp == 'yes' || resp == 'Yes'){
+                sal = prompt('Qual é o salario?')
+                sex = prompt('Qual o sexo?')
+                resp = prompt('Quer continuar?')
+                if (sex == 'Feminino' || sex == 'feminino' || sex == 'mulher' || sex == 'Mulher'){
+                    sal_femi = sal_femi + parseFloat(sal)
+                }
+                if (sex == 'Masculino' || sex == 'masculino' || sex == 'homem' || sex == 'Homem'){
+                    sal_masc = sal_masc + parseFloat(sal)
+                }
+
+            }
+            res.innerHTML += 'Foi pago ' + sal_femi + 'R$ as mulheres'
+            res.innerHTML += '<br>Foi pago ' + sal_masc + 'R$ aos homens' 
+            
+
+        }
+
+    </script>
+    
+</body>
+</html>

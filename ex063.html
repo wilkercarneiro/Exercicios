@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posições</title>
+</head>
+<body>
+    <headeR>
+        <h1>Posições</h1>
+    </headeR>
+    <section>
+        <div>
+            Quantos números você quer?: <input type="number" id="num"><br>
+            Qual é o passo?: <input type="number" id="pass"><br>
+            <input type="button" value="Contar" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let num = parseFloat(document.getElementById('num').value)
+            let pass = parseFloat(document.getElementById('pass').value)
+            let array = []
+            let valor = 0
+            
+            for (let i = 1; i <= num; i++){
+                valor = valor + pass
+                array.push(valor)
+            }
+            res.innerHTML += array
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Idades</title>
+</head>
+<body>
+    <header>
+        <h1>Leitor de Idades</h1>
+    </header>
+    <section>
+        <div>
+            
+            Quantas pessoas tem a lista? <input type="number" id="num"> <input type="button" value="Calcular" onclick="calcular()">
+    
+        </div>
+        <div id="res">
+
+        </div>
+        </section>
+    <script>
+        function calcular(){
+            let num = parseFloat(document.getElementById('num').value)
+            let idade
+            let sex = ''
+            let masculino = 0
+            let feminino = 0
+            let soma = 0
+            let idade_masc = 0
+            let idade_femi = 0
+            let soma_masc = 0
+            let n_femi = 0
+            for (let i = 1; i <= num; i++){
+                idade = prompt('[' + i + ' PESSOA] - IDADE' )
+                sex = prompt('[' + i + ' PESSOA] - SEXO' )
+                soma = soma + parseFloat(idade)
+                res.innerHTML = ''
+                
+                if (sex == 'masculino' || sex == 'Masculino' || sex == 'Homem' || sex == 'homem'){
+                masculino++
+                idade_masc = idade
+                soma_masc = soma_masc + parseFloat(idade_masc)
+
+
+                } else if (sex = 'feminino' || sex == 'Feminino' || sex == 'Mulher' || sex == 'mulher'){
+                feminino++
+                idade_femi = idade
+                if (idade_femi >= 20){
+                    n_femi++
+                }
+                }
+                
+            }
+            media_masc = soma_masc / num
+            media = soma / num
+            res.innerHTML += '<br>Idade média de todos os regristrados ' + media
+            res.innerHTML += '<br><br>Número de Homens: ' + masculino
+            res.innerHTML += '<br>Idade média de Homens registrados: ' + media_masc
+            res.innerHTML += '<br><br>Número de Mulheres: ' + feminino
+            res.innerHTML += '<br>Mulheres com mais de 20 anos:  ' + n_femi
+
+
+        }
+    </script>
+    
+</body>
+</html>

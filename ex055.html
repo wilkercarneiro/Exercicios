@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando IDADES</title>
+</head>
+<body>
+    <header>
+        <h1>Calculando <strong>IDADES</strong></h1>
+    </header>
+    <section>
+        <div>
+            Calcule a idade média: <input type="button" value="Iniciar" onclick="calcular()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let idade = 0
+            let sex = ''
+            let media = 0
+            let soma = 0
+            let resp = 'sim'
+            let i = 0
+            let maior = 0
+            let homem = 0
+            let menor_f = 99999999999
+            let idade_m = 0
+            res.innerHTML = ''
+
+            while (resp == 'sim' || resp == 'Sim' || resp == 's' || resp == 'S'){
+                i++
+                idade = prompt('[PESSOA Nº' + i + '] Qual a idade?')
+                sex = prompt('[PESSOA Nº' + i + '] Qual o sexo?')
+                resp = prompt('Quer continuar? [S/N]')
+                
+
+                if (idade > maior){
+                    maior = idade
+                }
+                
+                if (sex == 'Masculino' || sex == 'masculino' || sex == 'Homem' || sex == 'homem'){
+                homem++
+                idade_m = idade
+                }
+                soma = soma + parseFloat(idade_m)
+
+                if (sex == 'feminino' || sex == 'Feminino' || sex == 'mulher' || sex == 'Mulher'){
+
+                    if (idade < menor_f){
+                    menor_f = idade
+                    }
+                }
+
+            }
+            media = soma/homem
+            res.innerHTML += 'A maior idade do grupo é: ' + maior
+            res.innerHTML += '<br>Homens cadastrados: ' + homem
+            res.innerHTML += '<br>Idade da mulher mais jovem: ' + menor_f
+            res.innerHTML += '<br>A média de idade dos homens é: ' + media
+
+        }
+    </script>
+    
+</body>
+</html>

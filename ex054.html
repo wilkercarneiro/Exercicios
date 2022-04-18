@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Idades</title>
+</head>
+<body>
+    <header>
+        <h1>Leitor de Idades</h1>
+    </header>
+    <section>
+        <div>
+            Inicie o programa e digite a idade <input type="button" value="Iniciar" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let idade = 0
+            let resp = 'sim'
+            let i = 0 
+            let soma = 0
+            res.innerHTML = ''
+
+            while (resp == 'sim' || resp == 'Sim' || resp == 's' || resp == 'S' || resp == 'Yes' || resp == 'yes' || resp == '999'){
+            i++
+            idade = prompt('Qual a idade do Aluno?')
+            resp = prompt('Quer continuar?')
+            
+            soma = soma + parseFloat(idade)
+            }
+            res.innerHTML += 'Existem ' + i + ' alunos na turma'
+            res.innerHTML += '<br>A média de idade entre eles é de: ' + soma/i
+        }
+        
+
+    </script>
+    
+</body>
+</html>

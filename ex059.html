@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor</title>
+</head>
+<body>
+    <header>
+        <h1>Leitor</h1>
+    </header>
+    <section>
+        <div>
+            Clique para iniciar<br>
+            <input type="button" value="Iniciar" onclick="calcular()">
+
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let num = 0
+            let media = 0
+            let soma = 0
+            let menor = 99999999
+            let resp = 'sim'
+            let i = 0
+            let par = 0
+            res.innerHTML = ' '
+            while (resp == 'sim'||resp =='Sim'||resp == 's'||resp == 'S'){
+                i++
+                num = prompt('Digite o ' + i)
+                soma = soma + parseFloat(num)
+                if (menor > num){
+                    menor = num
+                }
+                if (num % 2 < 1){
+                    par++
+                }
+
+
+
+
+
+                resp = prompt('Quer continuar? [S/N]')
+            }
+            media = soma/i
+            res.innerHTML += 'A média entre os números é: ' + media
+            res.innerHTML += '<br>O menor valor digitado foi: ' + menor
+            res.innerHTML += '<br>A soma de todos os valores é: ' + soma
+            res.innerHTML += '<br>Números pares: ' + par
+
+            
+
+        }
+
+    </script>
+    
+</body>
+</html>

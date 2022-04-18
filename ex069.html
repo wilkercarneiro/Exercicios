@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Números</title>
+</head>
+<body>
+    <header>
+        <h1>Leitor de Números</h1>
+    </header>
+    <section>
+        <div>
+            Quantos números quer ler? <input type="number" id="num">
+            <input type="button" value="Iniciar" onclick="iniciar()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function iniciar(){
+            let num = parseFloat(document.getElementById('num').value)
+            let array = []
+            let ler = 0
+            let c = 0
+            let mult_10 = '' 
+            for (let i = 1; i <= num; i++){
+                c++
+                ler = prompt('Digite o ' + i + '° número')
+                array[c] = '<br>Número ' + ler + ' posição ' + c
+
+                if (ler % 10 < 1){
+                mult_10 += ' ' + c    
+                }
+
+            }
+            res.innerHTML = array + '<br> Os múltiplos de 10 estão nas posições ' + mult_10
+
+        }
+
+    </script>
+</body>
+</html>

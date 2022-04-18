@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares</title>
+</head>
+<body>
+    <header>
+        <h1>Números Pares</h1>
+    </header>
+    <section>
+        <div>
+            Quantos números você quer saber se é PAR? <input type="number" id="num">
+            <input type="button" value="Iniciar" onclick="iniciar()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+
+    <script>
+        function iniciar(){
+            let num = parseFloat(document.getElementById('num').value)
+            let array = []
+            let ler = 0
+            let c = -1
+            let par = ''
+            let npar = ''
+            res.innerHTML = ''
+            for (let i = 1; i <= num; i++){
+                c++
+                ler = prompt('Digite o ' + i + '° número')
+                array[c] = ' ' + ler
+
+                if(ler % 2 < 1){
+                    par += i + ', '
+                    npar += ler + ', '
+                }            
+            }
+            res.innerHTML += '<br>Números digitados: ' + array
+            res.innerHTML += '<br>Os números pares são: ' + npar + ' e estão nas posições ' + par
+
+        }
+
+    </script>
+    
+</body>
+</html>

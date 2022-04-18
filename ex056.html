@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Pessoas</title>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Pessoas</h1>
+    </header>
+    <section>
+        <div>
+            Verificador Inteligente <input type="button" value="Iniciar Verificação" onclick="calcular()">
+
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let nome = ''
+            let idade = 0
+            let sexo = ''
+            let resp = 'sim'
+            let i = 0
+            let maior = 0
+            let velha = ''
+            let menor = 9999999999
+            let jovem_f = ''
+            let media = 0
+            let soma = 0
+            let idade_m = 0
+            let idade_f18 = 0
+            
+            while (resp == 'sim' || resp == 'Sim' || resp == 's' || resp == 'S'){
+                i++
+                nome = prompt('[' + i + ' PESSOA] - NOME')
+                idade = prompt('[' + i + ' PESSOA] - IDADE')
+                sexo = prompt('[' + i + ' PESSOA] - SEXO')
+                resp = prompt('QUER CONTINUAR? [S/N]')
+                res.innerHTML = ''
+                
+
+
+                if (idade > maior){
+                    maior = idade
+                    velha = nome
+                }
+                if (sexo == 'feminino' || sexo == 'Feminino' || sexo == 'mulher' || sexo == 'Mulher'){
+                    if (idade < menor){
+                        menor = idade
+                        jovem_f = nome
+                    }
+                    if (idade < 18){
+                        idade_f18++
+                    }
+
+                }
+                if (sexo == 'masculino' || sexo == 'Masculino' || sexo == 'homem' || sexo == 'Homem'){
+                    if (idade > 30){
+                        idade_m++
+                    }
+                }
+                soma = soma + parseFloat(idade)
+
+            }
+            media = soma/i
+            res.innerHTML += 'A pessoa mais velha é: ' + velha
+            res.innerHTML += '<br>A mulher mais jovem é: ' + jovem_f
+            res.innerHTML += '<br>A média de idades é: ' + media
+            res.innerHTML += '<br>Homens com mais de 30 anos: ' + idade_m
+            res.innerHTML += '<br>Mulhres com menos de 18 anos: ' + idade_f18
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

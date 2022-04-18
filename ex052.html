@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatorio</title>
+</head>
+<body>
+    <header>
+        <h1>Somatorio</h1>
+    </header>
+    <section>
+        <div>
+            Faça soma de quantos números quiser: <input type="button" value="Somar" onclick="somar()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function somar(){
+            let resp = ''
+            let num = 0
+            let soma = 0
+            num = prompt('Digite um número')
+            resp = prompt('Quer continuar?')
+            res.innerHTML = ''
+            
+            while (resp == 'sim' || resp == 'Sim' || resp == 's' || resp == 'S' || resp == 'yes' || resp == 'Yes'){
+                num = prompt('Digite um número')
+                resp = prompt('Quer continuar?')
+                soma = soma + parseFloat(num)  
+            }
+            res.innerHTML += 'A soma de todos os números digitados é: ' + soma
+            
+        }
+
+    </script>
+    
+</body>
+</html>

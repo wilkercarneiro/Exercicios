@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativo de Idades</title>
+</head>
+<body>
+    <header>
+        <h1>Comparativo</h1>
+    </header>
+    <section>
+        <div>
+             Clique abaixo para começar! <br>
+             <input type="button" value="Iniciar" onclick="calcular()">   
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let resp = 'sim'
+            let idade = 0
+            let media = 0
+            let i = 0
+            let idade_21 = 0
+            let soma = 0
+            res.innerHTML = ''
+            while (resp == 'sim' || resp == 'Sim' || resp == 's' || resp == 'S'){
+                i++
+                idade = prompt('[' + i + '° PESSOA] - IDADE')
+                if (idade > 21){
+                    idade_21++
+                }
+                resp = prompt('Quer continuar? [S/N]')
+                soma = soma + parseFloat(idade)
+                
+                
+            }
+            media = soma / i
+            res.innerHTML += 'Idades digitadas: ' + i
+            res.innerHTML += '<br>Média entre as idades: ' + media
+            res.innerHTML += '<br>Pessoas com mais de 21 anos: ' + idade_21
+
+
+            
+
+        }
+
+    </script>
+    
+</body>
+</html>
