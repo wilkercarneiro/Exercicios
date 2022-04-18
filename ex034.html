@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+</head>
+<body>
+    <header>
+        <h1>Reajuste de Salario</h1>
+    </headeR>
+    <section>
+        <div>
+
+            Salario Atual: <input type="number" name="sal" id="sal">
+            <br>Sexo: <input type="radio" name="sex" id="masc" checked>
+            <label for="masc">Masculino</label>
+            <input type="radio" name="sex" id="femi">
+            <label for="femi">Feminino</label>
+            <br>Quantos anos o funcionario trabalha na empresa?: <input type="number" name="ano" id="ano"><br>
+            <input type="button" value="Calcular" onclick="calcular()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            
+            let sal = Number(document.getElementById('sal').value)
+            let sex = document.getElementsByName('sex')
+            let ano = Number(document.getElementById('ano').value)
+            let reaj = ''
+            
+            if (sex[1].checked && ano < 15){
+                reaj = ((5 / 100) * sal) + sal
+                res.innerHTML = 'Salario Anterior: ' + sal + '<br>Salario Atual: ' + reaj
+
+            } else if (sex[1].checked && ano < 20){
+                reaj = ((12 / 100) * sal) + sal
+                res.innerHTML = 'Salario Anterior: ' + sal + '<br>Salario Atual: ' + reaj
+
+            } else if (sex[1].checked){
+                reaj = ((23 / 100)* sal) + sal
+            res.innerHTML = 'Salario Anterior: ' + sal + '<br>Salario Atual: ' + reaj
+            } else if (sex[0].checked && ano < 15){
+                reaj = ((3 / 100)* sal) + sal
+                res.innerHTML = 'Salario Anterior: ' + sal + '<br>Salario Atual: ' + reaj
+
+            } else if (sex[0].checked && ano < 20){
+                reaj = ((13 / 100)* sal) + sal
+                res.innerHTML = 'Salario Anterior: ' + sal + '<br>Salario Atual: ' + reaj
+            } else {
+                reaj = ((25 / 100)* sal) + sal
+                res.innerHTML = 'Salario Anterior: ' + sal + '<br>Salario Atual: ' + reaj
+            }
+        }
+    </script>
+    
+</body>
+</html>

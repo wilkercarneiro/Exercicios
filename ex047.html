@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Produtos</title>
+</head>
+<body>
+    <header>
+        <h1>Leitor de Produtos</h1>
+    </header>
+    <section>
+        <div>
+            Quantos produtos quer ler? <input type="number" id="num"><input type="button" value="Comparar" onclick="comparar()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function comparar(){ 
+
+            let num = parseFloat(document.getElementById('num').value)
+            let comp
+            let maior = 0
+            let menor = 99999999999999
+       
+            
+            
+            for (let i = 1;i <= num;i++){
+                comp = prompt('Digite o ' + i + '° valor')
+                comp = parseFloat(comp)
+                if (comp > maior){
+                    maior = comp
+                }
+                if (comp < menor || comp == 0){
+                    menor = comp 
+                }      
+
+            }
+                res.innerHTML += maior + ' Foi o maior valor digitado<br>'
+                res.innerHTML += menor + ' Foi o menor valor digitado'
+        
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

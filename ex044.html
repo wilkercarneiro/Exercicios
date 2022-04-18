@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatorio</title>
+</head>
+<body>
+    <header>
+        <h1>Somatorio</h1>
+    </header>
+    <section>
+        <div>
+            
+            Quantos números quer contar? <input type="number" name="cont" id="cont"><br>
+            <input type="button" value="Contar" onclick="contar()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function contar(){
+            let cont = Number(document.getElementById('cont').value)
+            let ini = 0
+            let num
+            let n 
+            let soma = 0
+            if (ini < cont){
+                while (ini < cont){
+                    ini++  
+                    num = parseFloat(window.prompt('Digite o ' + ini + ' número'))
+                    soma = soma + num
+                }
+                res.innerHTML = 'A soma de todos os números é: ' + soma
+            }
+        }
+
+    </script>
+</body>
+</html>

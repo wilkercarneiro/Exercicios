@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <header>
+        <h1>Calculadora</h1>
+    </header>
+    <section>
+        <div>
+            De qual número quer começar? <input type="number" name="num1" id="num1">
+            <br>Em qual número quer terminar? <input type="number" name="num2" id="num2">
+            <br>Qual o passo da soma? <input type="number" name="passo" id="passo">
+            <br><input type="button" value="calcular" onclick="calcular()">
+
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let passo = Number(document.getElementById('passo').value)
+            let soma = 0
+
+            if (num1 > num2){
+                while (num1 >= num2){
+
+                    res.innerHTML += num1 + ' + '
+                    soma = soma + num1
+                    num1 = num1 - passo
+                    
+                    
+                }
+            } else {
+                while (num1 <= num2){
+
+                    res.innerHTML += num1 + ' + '
+                    soma = soma + num1
+                    num1 = num1 + passo
+                    
+                }
+            }
+            res.innerHTML += '<br>A soma entre os números é ' + soma
+            
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

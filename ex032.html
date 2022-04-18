@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Carros</title>
+</head>
+<body>
+    <header>
+        <h1>Aluguel de Carros</h1>
+    </header>
+    <section>
+        <div>
+            Qual carro foi alugado? <input type="radio" name="txttipo" id="luxo" checked>
+            <label for="luxo">Carro de Luxo</label>
+            <input type="radio" name="txttipo" id="popular">
+            <label for="popular">Carro Popular</label>
+            <br>Quantos dias o carro ficou alugado? <input type="number" name="dia" id="dia">
+            <br>Quantos KM o carro rodou? <input type="number" name="km" id="km">
+            <br><input type="button" value="Calcular" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let txttipo = document.getElementsByName('txttipo')
+            let dia = document.getElementById('dia')
+            let km = document.getElementById('km')
+            dia = Number(dia.value)
+            km = Number(km.value)
+
+            let vkm = ''
+            let vdia = ''
+            let vpagar = ''
+
+            if (txttipo[0].checked && km < 100){
+
+                vkm = km * 0.30
+                vdia = dia * 150
+                vpagar = vkm + vdia
+                res.innerHTML = '[CARRO DE LUXO] - O carro rodou ' + km + 'km por ' + dia + ' dias. <br>CUSTO: ' + vpagar + 'R$'
+            } else if (txttipo[0].checked && km >100){
+  
+                vkm = km * 0.25
+                vdia = dia * 150
+                vpagar = vkm + vdia
+                res.innerHTML = '[CARRO DE LUXO] - O carro rodou ' + km + 'km por ' + dia + ' dias. <br>CUSTO: ' + vpagar + 'R$'
+
+            } else if (txttipo[1].checked && km < 100){
+
+                vkm = km * 0.20
+                vdia = dia * 90
+                vpagar = vkm + vdia
+                res.innerHTML = '[CARRO POPULAR] - O carro rodou ' + km + 'km por ' + dia + ' dias. <br>CUSTO: ' + vpagar + 'R$'
+
+            } else{
+
+                vkm = km * 0.10
+                vdia = dia * 90
+                vpagar = vkm + vdia
+                res.innerHTML = '[CARRO POPULAR] - O carro rodou ' + km + 'km por ' + dia + ' dias. <br>CUSTO: ' + vpagar + 'R$'
+            }
+        }
+        
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Inteiros</title>
+    <style>
+
+        body {
+
+            background: rgb(0, 120, 160);
+            color: white;
+            text-align: center;
+            font: normal 15px arial;
+
+        }
+
+        section{
+            background-color: white;
+            border-radius: 5%;
+            padding: 5% ;
+            width: 250px;
+            margin: auto;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.147);
+            color: rgb(0, 65, 140);
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Números Inteiros</h1>
+        Este programa vai te dizer quais são os números inteiros. <br>Diga quantos números são e depois digite-os
+    </header>
+    <br>
+    <section>
+        <div>
+            <h3>Quantos números?</h3><br><input type="number" id="num"><input type="button" value="Calcular" onclick="calcular()">
+
+
+        </div>
+
+        <div id="res">
+
+        </div>
+    </section>
+
+    <script>
+        function calcular(){
+            let num = parseFloat(document.getElementById('num').value)
+            let div
+            let i = 0
+            let p = 0
+            let n
+            for (let c = 1; c <= num; c++){
+                n = parseFloat(window.prompt('Digite o ' + c + ' número'))
+                div = n % 2
+                if (div > 0){
+                    i++ 
+                } else {
+                    p++
+                }
+                
+                
+                res.innerHTML += 'Tem ' + p + ' números pares e ' + i + ' números impares'
+            }
+        }
+    </script>
+    
+</body>
+</html>

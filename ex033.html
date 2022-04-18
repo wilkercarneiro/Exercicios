@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventivo Muscular</title>
+</head>
+<body>
+    <header>
+        <h1>Incentivo Muscular</h1>
+    </header>
+    <section>
+        <div>
+            Horas de atividade fisica no mês: <input type="number" name="hatv" id="hatv">
+            <br><input type="button" value="calcular" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let hatv = document.getElementById('hatv')
+            hatv = Number(hatv.value)
+            let ponto = ''
+            let valor = ''
+
+            if (hatv <= 10){              
+                ponto = hatv * 2
+                valor = ponto * 0.05
+                res.innerHTML = 'O aluno acumulou ' + ponto + ' pontos e obteve um desconto de: ' + valor + 'R$'
+
+            } else if (hatv <= 20){
+                ponto = hatv * 5
+                valor = ponto * 0.05
+                res.innerHTML = 'O aluno acumulou ' + ponto + ' pontos e obteve um desconto de: ' + valor + 'R$'
+            } else {
+                ponto = hatv * 10
+                valor = ponto * 0.05
+                res.innerHTML = 'O aluno acumulou ' + ponto + ' pontos e obteve um desconto de: ' + valor + 'R$'
+            }
+
+        }
+
+    </script>    
+</body>
+</html>

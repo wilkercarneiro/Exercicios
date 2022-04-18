@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovação de Emprestimo</title>
+</head>
+<body>
+    <header>
+        <h1>Veja se o EMPRESTIMO será aprovado</h1>
+    </header>
+    <section>
+        <div>
+            Qual o valor do emprestimo? <input type="number" name="valor" id="valor">
+            <br>Quer dividir pra quantas vezes? <input type="number" name="parcela" id="parcela">
+            <br>Salario do pagador: <input type="number" name="sal" id="sal">
+            <br><input type="button" value="Ver Resultado" onclick="calcular()">
+        </div>
+        <div id="res">
+            
+
+        </div>
+    </section>
+    <script>
+        function calcular(){
+            let valor = document.getElementById('valor')
+            let parcela = document.getElementById('parcela')
+            let sal = document.getElementById('sal')
+            valor = Number(valor.value)
+            parcela = Number(parcela.value)
+            sal = Number(sal.value)
+
+            let limite = (30 / 100) * sal
+            let vp = valor / parcela
+
+            if (vp < limite){
+                res.innerHTML = 'Emprestimo APROVADO!<br>Valor do emprestimo: ' + valor + '<br>Valor de parcela: ' + vp
+            }else {
+                res.innerHTML = 'Emprestimo REPROVADO, tente dividir por mais parcelas'
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>

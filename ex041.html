@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Inteligente</title>
+</head>
+<body>
+    <header>
+        <h1>Contando...</h1>
+    </header>
+    <section>
+        <div>
+            Qual o primeiro número? <input type="number" name="num1" id="num1">
+            <br>Qual o segundo número? <input type="number" name="num2" id="num2">
+            <br><input type="button" value="Contar" onclick="contar()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function contar(){
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            if (num1 > num2){
+                while (num1 > num2){
+                    num1--
+                    res.innerHTML += num1
+                    if (num1 % 4 == 0){
+                        res.innerHTML += '[' + num1 + ']'
+                    }
+                }
+            } else {
+                while (num2 > num1){
+                    num1++
+                    res.innerHTML += num1
+                    if (num1 % 4 == 0){
+                        res.innerHTML += '[' + num1 + ']'
+                    }
+                }
+            }
+        } 
+
+    </script>
+    
+</body>
+</html>

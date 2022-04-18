@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem com Incremento</title>
+</head>
+<body>
+    <header>
+        <h1>Contagem com Incremento</h1>
+    </header>
+    <section>
+        <div>
+            Por onde devo começar a contar? <input type="number" name="num1" id="num1">
+            <br> Onde devo terminar? <input type="number" name="num2" id="num2">
+            <br> Qual é o passo? <input type="number" name="passo" id="passo">
+            <br> <input type="button" value="Contar" onclick="contar()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function contar(){
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let passo = Number(document.getElementById('passo').value)
+            if (num1 > num2){
+                while(num1 > num2){
+                    num1 = num1 - passo
+                    res.innerHTML += ' ' + num1
+                }
+            } else {
+                while(num1 < num2){
+                    num1 = num1 + passo
+                    res.innerHTML += ' ' + num1
+                }
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
